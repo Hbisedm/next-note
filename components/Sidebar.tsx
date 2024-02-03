@@ -5,8 +5,10 @@ import SidebarNoteList from "@/components/SidebarNoteList";
 import EditButton from "./EditButton";
 import NoteListSkeleton from "./NoteListSkeleton";
 import SidebarSearchField from "./SidebarSearchField";
+import { useTranslation } from "app/i18n";
 
-export default async function Sidebar() {
+export default async function Sidebar({lng}: {lng: string}) {
+  const {t} = await useTranslation(lng)
   return (
     <>
       <section className="col sidebar">
@@ -24,8 +26,8 @@ export default async function Sidebar() {
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
-          <SidebarSearchField></SidebarSearchField>
-          <EditButton noteId={null}>New</EditButton>
+          <SidebarSearchField lng={lng}></SidebarSearchField>
+          <EditButton noteId={null}>{t('new')}</EditButton>
         </section>
         <nav>
           <Suspense fallback={<NoteListSkeleton />}>
