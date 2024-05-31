@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang={lng}>
       <body>
-      <div className={`container`}>
+      <div >
         <div className="main">
           <Sidebar lng={lng}></Sidebar>
           <section className="col note-viewer">{children}</section>

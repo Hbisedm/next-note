@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import NotePreview from "@/components/NotePreview";
 import EditButton from "@/components/EditButton";
-import { INote } from "@/types";
+import { INote } from "@/types/index";
 export default function Note({
   noteId,
   note,
